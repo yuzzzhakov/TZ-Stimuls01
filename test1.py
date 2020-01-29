@@ -9,15 +9,8 @@ with open('events.txt') as f:
         d_events = dict()
         # Добавляем в словарь индекс строки и параметры
         d_events['event_id'] = i
-        # d_events['frame_type'] = splitted_event[0]
-        # d_events['event_type_number'] = int(splitted_event[2])
         d_events['start_time'] = int(splitted_event[3])
         d_events['end_time'] = int(splitted_event[4])
-        # d_events['duration'] = int(splitted_event[5])
-        # d_events['x0'] = float(splitted_event[6])
-        # d_events['y0'] = float(splitted_event[7])
-        # d_events['x'] = float(splitted_event[8])
-        # d_events['y'] = float(splitted_event[9])
         events[i] = d_events
 
 
@@ -52,12 +45,6 @@ for stimul in stimuls:
                 or ((event['start_time'] >= stimul['start_time'])
                     and (event['end_time'] <= stimul['end_time'])):
             stimul['events_ids'].append(event['event_id'])
-
-
-print(true_stimuls_id)
-print(time_point_list)
-print(stimuls)
-print(events)
 
 path = os.getcwd() + '/stimul_events'
 
